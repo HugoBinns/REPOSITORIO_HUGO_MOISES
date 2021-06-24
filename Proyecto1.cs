@@ -80,17 +80,30 @@ namespace ConsoleApp1
 
                     //Esto es (a ^ b)
                     if (a && b)
+                    {
                         WriteAt("1", 19, posAux1 += 1);
+                        c = true;
+                    }
                     else
+                    {
                         WriteAt("0", 19, posAux1 += 1);
+                        c = false;
+                    }
 
                     //Esto es ~b
                     if (b)
+                    {
                         WriteAt("0", 30, posAux2 += 1);
+                        d = false;
+                    }
                     else
+                    {
                         WriteAt("1", 30, posAux2 += 1);
+                        d = true;
+                    }
 
-                   if(a || b)
+                    //Esto es (a ^ b) v ~b
+                    if (c || d)
                         WriteAt("1", 42, posAux3 += 1);
                     else
                         WriteAt("0", 42, posAux3 += 1);
